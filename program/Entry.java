@@ -1,51 +1,46 @@
 public class Entry {
 	private int id;
-	private double x;
-	private double y;
+	private double distance;
 	private double height;
 
 	public Entry() {
 
 	}
 
-	public Entry(double ax, double ay) {
-		this.x = ax;
-		this.y = ay;
+	public Entry(double dist) {
+		this.distance = dist;
 	}
 
-	public Entry(double ax, double ay, double ac) {
-		this.x = ax;
-		this.y = ay;
-		this.height = ac;
+	public Entry(double dist, double high) {
+		this.distance = dist;
+		this.height = high;
 	}
 
-	public double getID() {
+	public Entry(int id1, double dist, double high) {
+		this.id = id1;
+		this.distance = dist;
+		this.height = high;
+	}
+
+	public int getID() {
 		return this.id;
 	}
 
-	public void setID(double a) {
+	public void setID(int a) {
 		this.id = a;
 	}
 
-	public double getX() {
-		return this.x;
-	} 
-
-	public void setX(double a) {
-		this.x = a;
+	public double getDistance() {
+		return this.distance;
 	}
 
-	public double getY() {
-		return this.y;
-	} 
-
-	public void setY(double a) {
-		this.y = a;
+	public void setDistance(double a) {
+		this.distance = a;
 	}
 
 	public double getHeight() {
 		return this.height;
-	} 
+	}
 
 	public void setHeight(double a) {
 		this.height = a;
