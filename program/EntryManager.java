@@ -33,4 +33,8 @@ public class EntryManager {
 	public void setEntries(List<Entry> a) {
 		this.entries = a;
 	}
+
+	public Entry get(int i) {
+		return this.entries.get(i);
+	}
 }

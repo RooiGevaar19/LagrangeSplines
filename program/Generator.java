@@ -12,7 +12,7 @@ public class Generator {
 	static void load (String inp) {
         FileReader fr = null;
         try {
-        	int i = 1;
+        	int i = 0;
             fr = new FileReader(inp);
             Scanner plik = new Scanner(fr);
             plik.useLocale(Locale.US);
@@ -30,9 +30,6 @@ public class Generator {
 
     public static void main(String[] args) {
 		load(args[0]);
-		for (Entry i : db.getEntries()) {
-			System.out.println("["+i.getDistance()+", "+i.getHeight()+"]");
-		}
+		System.out.println(Interpolation.countLagrange(0.0, db.getEntries()));
     }
-
 }
