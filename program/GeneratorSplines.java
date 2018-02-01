@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.FileReader;
 
-public class Generator {
+public class GeneratorSplines {
 
 	static EntryManager db = new EntryManager("base");
 	// search
@@ -30,6 +30,6 @@ public class Generator {
 
     public static void main(String[] args) {
 		load(args[0]);
-		System.out.println(Interpolation.countLagrange(0.0, db.getEntries()));
+		System.out.println(Interpolation.countSplines(0.0, db));
     }
 }

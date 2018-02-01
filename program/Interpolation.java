@@ -2,8 +2,11 @@ import java.util.List;
 
 public class Interpolation {
 
+    static int sectionLength = 4;
+
     // interpolacja Lagrange'a
-    public static double countLagrange(double x, List<Entry> args) {
+    public static double countLagrange(double x, EntryManager db) {
+        List<Entry> args = db.getEntries();
         double w = 0.0;
         for (int i = 0; i < args.size(); i++) {
             double y = args.get(i).getHeight();
@@ -19,4 +22,11 @@ public class Interpolation {
 
     // interpolacja splajnami 3-ciego stopnia
     // TODO
+    public static double countSplines(double x, EntryManager db) {
+        int count = db.getCount();
+        int sectionMin = sectionLength * (int)(Math.floor(x/sectionLength));
+        int sectionMax = sectionLength * (int)(Math.floor(x/sectionLength) + 1);
+        EntryManager section = db.getEntriesSubset(sectionMin, sectionMax);
+        return countLagrange(x, section);
+    }
 }

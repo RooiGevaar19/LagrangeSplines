@@ -34,7 +34,14 @@ public class EntryManager {
 		this.entries = a;
 	}
 
-	public Entry get(int i) {
-		return this.entries.get(i);
+	public int getCount() {
+		return entries.size();
+	}
+
+	public EntryManager getEntriesSubset(int begin, int end) {
+		List<Entry> a = new ArrayList<Entry>();
+		for (int i = begin; i < end; i++) a.add(entries.get(i));
+		EntryManager b = new EntryManager(this.label, a);
+		return b;
 	}
 }
