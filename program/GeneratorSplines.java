@@ -30,6 +30,6 @@ public class GeneratorSplines {
 
     public static void main(String[] args) {
 		load(args[0]);
-		System.out.println(Interpolation.countSplines(0.0, db));
+		System.out.println(Interpolation.countSplines(Double.parseDouble(args[1]), db));
     }
 }

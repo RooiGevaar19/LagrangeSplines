@@ -30,6 +30,6 @@ public class GeneratorLagrange {
 
     public static void main(String[] args) {
 		load(args[0]);
-		System.out.println(Interpolation.countLagrange(0.0, db));
+		System.out.println(Interpolation.countLagrange(Integer.parseInt(args[1]), db));
     }
 }
